@@ -176,3 +176,28 @@ Job is a layer of abstraction over pods. It is used to run a task to completion.
 ## Namespace
 
 Namespace is a way to divide cluster resources between multiple users. It is a layer of abstraction over cluster. It is used to divide cluster resources between multiple users. It is used to create virtual clusters within a physical cluster. It is used to create different environments like dev, test, prod, etc.
+
+# Kubernetes Architecture
+
+## Node Architecture
+
+Nodes are the workers that run applications. A node can be a physical machine or a virtual machine. Each node is managed by the master components and contains the services necessary to run pods.
+
+They have multiple pods on it.
+It has 3 processes running on it:
+
+- Container runtime
+- Kubelet (Scheduler) interacts with container runtime and creates pods assigning resources to them.
+- Kube-proxy (Network) is a network proxy that forwards traffic to the right pod. It is intelligent enough to know which pod is running on which node.
+
+## Master Architecture
+
+Master is the brain of the cluster. It is responsible for managing the cluster. It is responsible for maintaining the desired state of the cluster. It is responsible for scaling the cluster. It is responsible for deploying new applications. It is responsible for rolling out updates. It is responsible for monitoring the cluster. It is responsible for managing the cluster resources. It is responsible for managing the cluster security.
+
+It has 4 processes running on it:
+
+- API Server -cluster gateway,gatekeepeer for all the requests coming to the cluster, one entry point for all the requests.
+- Scheduler- responsible for scheduling the pods on the nodes.
+- Controller Manager - responsible for maintaining the desired state of the cluster.
+- etcd - key-value store, stores the state of the cluster.
+
