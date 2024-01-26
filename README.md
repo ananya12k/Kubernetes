@@ -199,5 +199,9 @@ It has 4 processes running on it:
 - API Server -cluster gateway,gatekeepeer for all the requests coming to the cluster, one entry point for all the requests.
 - Scheduler- responsible for scheduling the pods on the nodes.
 - Controller Manager - responsible for maintaining the desired state of the cluster.
-- etcd - key-value store, stores the state of the cluster.
+- etcd - key-value store, stores the state of the cluster, are cluster brain.
 
+
+## Example Cluster Setup
+
+In a very small cluster setup, you have 2 master nodes and 3 worker nodes. You have 3 pods running on the worker nodes. You have 2 services running on the worker nodes. You have 1 ingress running on the worker nodes. You have 1 configmap running on the worker nodes. You have 1 secret running on the worker nodes. You have 1 volume running on the worker nodes. You have 1 deployment running on the worker nodes. You have 1 statefulset running on the worker nodes. You have 1 daemonset running on the worker nodes. You have 1 job running on the worker nodes. You have 1 namespace running on the worker nodes.
