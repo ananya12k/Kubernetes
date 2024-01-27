@@ -5,6 +5,34 @@ Kubernetes is an open-source system for automating deployment, scaling, and mana
 Earlier we used to have monolithic applications. But now we have microservices architecture. So, we have multiple services running on multiple machines. So, we need a tool to manage these services. That's where container orchestration tools come into picture. They help us in managing these services.We use Docker for that
 
 Later on something call configuration management tools came into picture. They help us in managing the configuration of the services.
+This gave is immutable infrastructure. We can create and destroy the infrastructure anytime. We can create a new infrastructure from the configuration.(Chef, Puppet, Ansible, Saltstack)
+
+## Monolithic Application
+
+Suppose we have a application where we have frontend, backend, Chats, DB, Networking Components. After bundling the app and deploying it in one container. This is known as monolithic architecture.
+
+So, if any changes happen, I need to redeploy again. Same will happen if I scale it, others would require scaling too.
+This is not a good way to build apps. That's when the term 'microservices' comes into picture.
+
+## Microservice Architecture
+
+Instead of deploying it as single application, all the components are deployed as individual apps.
+Also known as fault isolation,I can work on independatly.
+
+Now the thing is how will these communicate with each other?
+
+- Service Meshes
+
+## Orchestration
+
+Now consider a scenario where you have 100 containers for your app and your user base increases, this would increase load on server. So what will you do?
+You will create multiple instances of containers that would balance the load over server.
+
+Suppose you have 100 containers running and 50 are damaged , so you would need to restart it again.
+Rolling updates, deployment is an issue.
+
+This is where orchestrators come into picture.They help in deploying and managing containers dynamically.
+This is can be done using Kubernetes.The apps that follow all principles and run on top of kubernetes are called cloud native app.
 
 # What is Kubernetes?
 
