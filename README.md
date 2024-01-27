@@ -201,7 +201,215 @@ It has 4 processes running on it:
 - Controller Manager - responsible for maintaining the desired state of the cluster.
 - etcd - key-value store, stores the state of the cluster, are cluster brain.
 
-
 ## Example Cluster Setup
 
 In a very small cluster setup, you have 2 master nodes and 3 worker nodes. You have 3 pods running on the worker nodes. You have 2 services running on the worker nodes. You have 1 ingress running on the worker nodes. You have 1 configmap running on the worker nodes. You have 1 secret running on the worker nodes. You have 1 volume running on the worker nodes. You have 1 deployment running on the worker nodes. You have 1 statefulset running on the worker nodes. You have 1 daemonset running on the worker nodes. You have 1 job running on the worker nodes. You have 1 namespace running on the worker nodes.
+
+How do you add new master/ worker nodes to the cluster?
+
+- Get a new server
+- Install kubelet, kube-proxy, container runtime on the server(worker node processes)
+- Add to cluster
+
+# What is Minikube?
+
+MiniKube is a tool that makes it easy to run Kubernetes locally. MiniKube runs a single-node Kubernetes cluster inside a VM on your laptop for users looking to try out Kubernetes or develop with it day-to-day.Mainly used for development and testing purposes.
+
+It has docker and kubectl installed in it.
+
+I can use virtualbox or hyper-v as a VM driver.
+
+# Installing Kubectl
+
+## Prerequisites
+
+- VirtualBox or Hyper-V
+
+## Installing Kubectl
+
+- Download the latest release with the help of website based on your OS:
+
+```bash
+https://kubernetes.io/releases/download/
+```
+
+# Installing Minikube
+
+## Prerequisites
+
+- VirtualBox or Hyper-V
+- kubectl
+
+## Installing Minikube
+
+- Download the latest release with the help of website based on your OS:
+
+```bash
+https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/
+```
+
+# Kubectl Commands
+
+## kubectl version
+
+```bash
+kubectl version
+```
+
+## kubectl cluster-info
+
+```bash
+kubectl cluster-info
+```
+
+## kubectl nodes
+
+```bash
+kubectl get nodes
+```
+
+## kubectl pods
+
+```bash
+kubectl get pods
+```
+
+## kubectl services
+
+```bash
+kubectl get services
+```
+
+## kubectl deployment
+
+```bash
+kubectl get deployment
+```
+
+## kubectl config view
+
+```bash
+kubectl config view
+```
+
+## kubectl replica set
+
+```bash
+kubectl get replicaset
+```
+
+## kubectl edit deployment
+
+```bash
+kubectl edit deployment myimagedep
+```
+
+## kubectl logs
+
+```bash
+kubectl logs mongo-7bb86cb9-d8h8m
+```
+
+## kubectl describe pod
+
+```bash
+kubectl describe pod mongo-7bb86cb9-d8h8m
+```
+
+## kubectl exec
+
+```bash
+kubectl exec -it mongo-7bb86cb9-d8h8m -- bin/bash
+```
+
+## kubectl delete deployment
+
+```bash
+kubectl delete deployment myimage
+```
+
+## kubectl apply
+
+```bash
+kubectl apply -f config-file.yaml
+```
+
+## kubectl create deployment
+
+```bash
+kubectl create deployment mongo --image=mongo
+```
+
+# Minikube Commands
+
+## minikube start
+
+```bash
+minikube start
+```
+
+## minikube status
+
+```bash
+minikube status
+```
+
+## minikube stop
+
+```bash
+minikube stop
+```
+
+## minikube delete
+
+```bash
+minikube delete
+```
+
+## minikube dashboard
+
+```bash
+minikube dashboard
+```
+
+## minikube ip
+
+```bash
+minikube ip
+```
+
+## minikube service
+
+```bash
+minikube service myimage
+```
+
+## minikube service list
+
+```bash
+minikube service list
+```
+
+## minikube addons list
+
+```bash
+minikube addons list
+```
+
+## minikube addons enable
+
+```bash
+minikube addons enable dashboard
+```
+
+## minikube addons disable
+
+```bash
+minikube addons disable dashboard
+```
+
+## minikube addons open
+
+```bash
+minikube addons open dashboard
+```
