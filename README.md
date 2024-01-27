@@ -2,6 +2,10 @@
 
 Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
 
+Earlier we used to have monolithic applications. But now we have microservices architecture. So, we have multiple services running on multiple machines. So, we need a tool to manage these services. That's where container orchestration tools come into picture. They help us in managing these services.We use Docker for that
+
+Later on something call configuration management tools came into picture. They help us in managing the configuration of the services.
+
 # What is Kubernetes?
 
 Kubernetes is a orchestration framework for Docker containers. It allows you to deploy your applications quickly and predictably, scale them as needed, and manage them through a simple and elegant interface.
