@@ -38,7 +38,7 @@ This is can be done using Kubernetes.The apps that follow all principles and run
 
 Kubernetes is a orchestration framework for Docker containers. It allows you to deploy your applications quickly and predictably, scale them as needed, and manage them through a simple and elegant interface.
 
-Google open-sourced the Kubernetes project in 2014. Kubernetes builds upon a decade and a half of experience that Google has with running production workloads at scale, combined with best-of-breed ideas and practices from the community.
+Google open-sourced the Kubernetes project in 2014(Borg and Omega). Kubernetes builds upon a decade and a half of experience that Google has with running production workloads at scale, combined with best-of-breed ideas and practices from the community.
 
 # Need for Kubernetes
 
@@ -59,16 +59,18 @@ They guarantee some features like:
 
 ## Cluster
 
-A cluster is a set of machines, called nodes, that run containerized applications managed by Kubernetes. A cluster has at least one worker node and at least one master node.
+A cluster is a set of machines, called nodes+control plane(master node), that run containerized applications managed by Kubernetes. A cluster has at least one worker node and at least one master node.
 Cluster is the highest level of abstraction in Kubernetes.
 
-## Master
+## Master or Control Plane
 
-A master is a node with three components that run the cluster:
+A master or control plane is a node with three components that run the cluster:
 
 - kube-apiserver
 - kube-controller-manager
 - kube-scheduler
+
+Help in managing the cluster. It is responsible for maintaining the desired state of the cluster. It is responsible for scaling the cluster. It is responsible for deploying new applications. It is responsible for rolling out updates. It is responsible for monitoring the cluster. It is responsible for managing the cluster resources. It is responsible for managing the cluster security.
 
 ### kube-apiserver
 
@@ -119,6 +121,17 @@ The following are the most important Kubernetes objects, which we will cover in 
 - StatefulSet
 - DaemonSet
 - Job
+
+How do I run my app in Kubernetes?
+
+- Create microservice
+- Containerize it
+- Put container in pod
+- Put pod in deployment to controller
+
+## Controller
+
+A controller is a control loop that watches the shared state of the cluster through the API server and makes changes attempting to move the current state towards the desired state. Examples of controllers that ship with Kubernetes today are the replication controller, endpoints controller, namespace controller, and serviceaccounts controller.
 
 ## Node
 
